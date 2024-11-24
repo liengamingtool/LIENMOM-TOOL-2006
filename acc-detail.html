@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết Tài khoản Clone</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-header">
+            <img src="assets/logo.png" alt="Logo" style="width: 150px;">
+            <p></p>
+        </div>
+    </header>
+
+    <div class="acc-detail-page">
+        <h1>Chi tiết tài khoản Clone</h1>
+        
+        <!-- Thông tin tài khoản -->
+        <div id="acc-detail-info"></div>
+
+        <!-- Link tải tài khoản -->
+        <div id="download-link"></div>
+    </div>
+
+    <footer>
+        <div class="bottom-nav">
+            <a href="index.html"><img src="assets/home-icon.png" alt="Home"><span>TRANG CHỦ</span></a>
+            <a href="tool.html"><img src="assets/tool-icon.png" alt="Tool"><span>TOOL</span></a>
+            <a href="acc-clone.html" class="active"><img src="assets/acc-icon.png" alt="Acc Clone"><span>ACC CLONE</span></a>
+        </div>
+    </footer>
+
+    <script>
+        // Lấy tham số từ URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const platform = urlParams.get('platform');
+        const username = urlParams.get('username');
+        const password = urlParams.get('password');
+
+        // Dữ liệu tải về cho mỗi tài khoản
+        const accDownloadLinks = {
+            TikTok: 'download/tiktok_clone123.zip',
+            Facebook: 'download/fb_clone456.zip',
+            Instagram: 'download/instagram_clone789.zip',
+            Twitter: 'download/twitter_clone101.zip',
+            // Thêm link tải cho các tài khoản khác ở đây...
+        };
+
+        // Hiển thị thông tin tài khoản
+        function displayAccountDetails() {
+            const accDetailInfo = document.getElementById('acc-detail-info');
+            const downloadLink = document.getElementById('download-link');
+
+            if (platform && username && password) {
+                accDetailInfo.innerHTML = `
+                    <p><strong>Nền tảng:</strong> ${platform}</p>
+                    <p><strong>Tên đăng nhập:</strong> ${username}</p>
+                    <p><strong>Mật khẩu:</strong> ${password}</p>
+                `;
+                
+                // Kiểm tra xem có link tải cho tài khoản này không
+                const link = accDownloadLinks[platform];
+                if (link) {
+                    downloadLink.innerHTML = `<a href="${link}" class="download-button">Tải tài khoản</a>`;
+                } else {
+                    downloadLink.innerHTML = '<p>Không có link tải cho tài khoản này.</p>';
+                }
+            } else {
+                accDetailInfo.innerHTML = `<p>Không có thông tin tài khoản.</p>`;
+            }
+        }
+
+        // Khởi động khi trang tải
+        window.onload = displayAccountDetails;
+    </script>
+</body>
+</html>

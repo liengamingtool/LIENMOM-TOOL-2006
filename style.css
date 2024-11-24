@@ -1,0 +1,102 @@
+/* Logo trên đầu trang */
+.logo-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo-header img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo-header h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+/* Phần Tool & Acc Clone */
+.tool-item, .acc-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tool-item img, .acc-item img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.tool-item h2, .acc-item h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.tool-item p, .acc-item p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+}
+
+/* Thanh điều hướng ở chân trang */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.bottom-nav a {
+    text-decoration: none;
+    text-align: center;
+    color: #ff1593;
+    font-size: 5px;
+    flex-grow: 1;
+}
+
+.bottom-nav img {
+    width: 10px;
+    height: 9px;
+    margin-bottom: 1px;
+}
+
+.bottom-nav span {
+    display: block;
+    margin-top: 2px;
+}
+
